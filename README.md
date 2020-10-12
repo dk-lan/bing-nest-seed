@@ -3,7 +3,7 @@
 </p>
 
 ## 说明
-该项目基于[Nest](https://github.com/nestjs/nest)框架进行开发。使用`TypeScripty`进行编写。
+该项目基于[Nest](https://github.com/nestjs/nest)框架进行开发。使用`TypeScript`进行编写。
 
 ## 框架架构
 |文件|说明|
@@ -14,14 +14,8 @@
 |`passport\`|jwt 验证目录|
 |`i18n\`|国际化字典目录|
 |`src\main.ts`|入口|
-|`src\main.hmr.ts`|热更新入口|
-|`src\app.service.ts`|App服务（选择）|
 |`src\app.module.ts`|App模块（根模块，必须）|
-|`src\app.controller.ts`|APP控制器（选择）|
-|`src\app.controller.spec.ts`|APP控制器单元测试用例（选择）|
-|`bing`|核心模块（声明过滤器、管道、拦截器、守卫、中间件、全部模块）|
-
-> 将mongodb服务和业务模块分开，有个好处就是减少`nest`循环依赖注入深坑
+|`src\bing\`|核心模块（声明过滤器、管道、拦截器、守卫、中间件、全部模块）|
 
 ### 服务配置文件
 `ServerConfig`
