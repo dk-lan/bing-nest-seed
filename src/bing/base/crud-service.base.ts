@@ -2,7 +2,6 @@ import { ServiceBase } from './service.base';
 import { IKey } from '../core/model';
 import { Injectable } from '@nestjs/common';
 import { RepositoryBase } from './respository.base';
-import { Warning } from '@/bing/core/warning';
 
 /**
  * 增删改查服务基类
