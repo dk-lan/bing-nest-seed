@@ -1,0 +1,26 @@
+{
+    "port": 1008,
+    "mainnet_http": "https://mainnet.infura.io/",
+    "mainnet_soket": "wss://mainnet.infura.io/ws/",
+    "languages": ["en-us", "zh-cn"],
+    "default_language": "zh-cn",
+    "mysql": {
+        "type": "mysql",
+        "host": "127.0.0.1",
+        "port": 3306,
+        "username": "root",
+        "password": "root",
+        "database": "nest",
+        "synchronize": false
+    },
+    "redis": {
+        "host": "127.0.0.1",
+        "port": 6379,
+        "family": 4,
+        "password": "",
+        "db": 0
+    },
+    "rabbitmq": {
+        "host": "amqp://guest:guest@localhost:5672"
+    }
+}

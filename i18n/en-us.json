@@ -1,0 +1,7 @@
+{
+    "duplicat_user": "username already be used",
+    "not_exists_user": "username is not exists",
+    "regsiter_success": "register success",
+    "password_incorrect": "password incorrect",
+    "user_locked": "user is locked"
+}

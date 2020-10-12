@@ -1,0 +1,195 @@
+{
+    "appenders": {
+        "trace": {
+            "type": "dateFile",
+            "filename": "log/trace/trace",
+            "pattern": "-yyyy-MM-dd.log",
+            "alwaysIncludePattern": true,
+            "daysToKeep": 7,
+            "keepFileExt": true,
+            "layout": {
+                "type": "pattern",
+                "pattern": "opTime: %d{yyyy-MM-dd hh:mm:ss.SSS} level: %p bussiness: %c %content: %n%m %x{line}",
+                "tokens": {
+                    "line": "\r\n-----------------------------------------------------------------------------------------------------------------------------"
+                }
+            }
+        },
+        "debug": {
+            "type": "dateFile",
+            "filename": "log/debug/debug",
+            "pattern": "-yyyy-MM-dd.log",
+            "alwaysIncludePattern": true,
+            "daysToKeep": 15,
+            "keepFileExt": true,
+            "layout": {
+                "type": "pattern",
+                "pattern": "opTime: %d{yyyy-MM-dd hh:mm:ss.SSS} level: %p bussiness: %c %content: %n%m %x{line}",
+                "tokens": {
+                    "line": "\r\n-----------------------------------------------------------------------------------------------------------------------------"
+                }
+            }
+        },
+        "information": {
+            "type": "dateFile",
+            "filename": "log/info/info",
+            "pattern": "-yyyy-MM-dd.log",
+            "alwaysIncludePattern": true,
+            "daysToKeep": 30,
+            "keepFileExt": true,
+            "layout": {
+                "type": "pattern",
+                "pattern": "opTime: %d{yyyy-MM-dd hh:mm:ss.SSS} level: %p bussiness: %c %content: %n%m %x{line}",
+                "tokens": {
+                    "line": "\r\n-----------------------------------------------------------------------------------------------------------------------------"
+                }
+            }
+        },
+        "warning": {
+            "type": "dateFile",
+            "filename": "log/warn/warn",
+            "pattern": "-yyyy-MM-dd.log",
+            "alwaysIncludePattern": true,
+            "keepFileExt": true,
+            "layout": {
+                "type": "pattern",
+                "pattern": "opTime: %d{yyyy-MM-dd hh:mm:ss.SSS} level: %p bussiness: %c %content: %n%m %x{line}",
+                "tokens": {
+                    "line": "\r\n-----------------------------------------------------------------------------------------------------------------------------"
+                }
+            }
+        },
+        "error": {
+            "type": "dateFile",
+            "filename": "log/error/error",
+            "pattern": "-yyyy-MM-dd.log",
+            "alwaysIncludePattern": true,
+            "keepFileExt": true,
+            "layout": {
+                "type": "pattern",
+                "pattern": "opTime: %d{yyyy-MM-dd hh:mm:ss.SSS} level: %p bussiness: %c %content: %n%m %x{line}",
+                "tokens": {
+                    "line": "\r\n-----------------------------------------------------------------------------------------------------------------------------"
+                }
+            }
+        },
+        "fatal": {
+            "type": "dateFile",
+            "filename": "log/fatal/fatal",
+            "pattern": "-yyyy-MM-dd.log",
+            "alwaysIncludePattern": true,
+            "keepFileExt": true,
+            "layout": {
+                "type": "pattern",
+                "pattern": "opTime: %d{yyyy-MM-dd hh:mm:ss.SSS} level: %p bussiness: %c %content: %n%m %x{line}",
+                "tokens": {
+                    "line": "\r\n-----------------------------------------------------------------------------------------------------------------------------"
+                }
+            }
+        },
+        "console": {
+            "type": "console",
+            "layout": {
+                "type": "pattern",
+                "pattern": "%[[opTime:%d{yyyy-MM-dd hh:mm:ss.SSS}] [level:%p] [bussiness:%c] %content:%n%m %x{line} %]",
+                "tokens": {
+                    "line": "\r\n-----------------------------------------------------------------------------------------------------------------------------"
+                }
+            }
+        },
+        "consoleFile": {
+            "type": "dateFile",
+            "filename": "log/console/console",
+            "pattern": "-yyyy-MM-dd.log",
+            "alwaysIncludePattern": true,
+            "daysToKeep": 3,
+            "keepFileExt": true,
+            "layout": {
+                "type": "pattern",
+                "pattern": "opTime: %d{yyyy-MM-dd hh:mm:ss.SSS} level: %p bussiness: %c %content: %n%m %x{line}",
+                "tokens": {
+                    "line": "\r\n-----------------------------------------------------------------------------------------------------------------------------"
+                }
+            }
+        },
+        "http": {
+            "type": "dateFile",
+            "filename": "log/http/http",
+            "pattern": "-yyyy-MM-dd.log",
+            "alwaysIncludePattern": true,
+            "daysToKeep": 3,
+            "keepFileExt": true,
+            "layout": {
+                "type": "pattern",
+                "pattern": "opTime: %d{yyyy-MM-dd hh:mm:ss.SSS} level: %p bussiness: %c %content: %n%m %x{line}",
+                "tokens": {
+                    "line": "\r\n-----------------------------------------------------------------------------------------------------------------------------"
+                }
+            }
+        }
+    },
+    "categories": {
+        "default": {
+            "appenders": [
+                "console"
+            ],
+            "level": "debug"
+        },
+        "console": {
+            "appenders": [
+                "console",
+                "consoleFile"
+            ],
+            "level": "debug"
+        },
+        "trace": {
+            "appenders": [
+                "trace",
+                "console"
+            ],
+            "level": "trace"
+        },
+        "debug": {
+            "appenders": [
+                "debug",
+                "console"
+            ],
+            "level": "debug"
+        },
+        "information": {
+            "appenders": [
+                "information",
+                "console"
+            ],
+            "level": "info"
+        },
+        "warning": {
+            "appenders": [
+                "warning",
+                "console"
+            ],
+            "level": "warn"
+        },
+        "error": {
+            "appenders": [
+                "error",
+                "console"
+            ],
+            "level": "error"
+        },
+        "fatal": {
+            "appenders": [
+                "fatal",
+                "console"
+            ],
+            "level": "fatal"
+        },
+        "http": {
+            "appenders": [
+                "console",
+                "http"
+            ],
+            "level": "debug"
+        }
+    }
+}
