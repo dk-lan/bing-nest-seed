@@ -1,4 +1,4 @@
-import { ApiModelProperty } from '@nestjs/swagger';
+import { ApiProperty } from '@nestjs/swagger';
 import { IsEmail, IsNotEmpty, Length, ArrayContains, IsIn } from 'class-validator';
 import { Lang, QueryParameter } from '@/bing';
 
@@ -7,6 +7,6 @@ import { Lang, QueryParameter } from '@/bing';
  */
 export class BTCImportDTO extends Lang{
     @IsNotEmpty()
-    @ApiModelProperty({description: "私钥", required: true})
+    @ApiProperty({description: "私钥", required: true})
     privateKey: string;
 }

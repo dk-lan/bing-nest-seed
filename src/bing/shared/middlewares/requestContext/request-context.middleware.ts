@@ -10,16 +10,13 @@ export class RequestContextMidlleware implements NestMiddleware {
     /**
      * 解析执行
      */
-    resolve() {
-        console.log('执行请求上下文中间件...');
-        return (req, res, next) => {
-            const requestContext = new RequestContext(req, res);
-            const session = cls.getNamespace(RequestContext.nsid) || cls.createNamespace(RequestContext.nsid);
+    use(req, res, next) {
+        const requestContext = new RequestContext(req, res);
+        const session = cls.getNamespace(RequestContext.nsid) || cls.createNamespace(RequestContext.nsid);
 
-            session.run(async () => {
-                session.set(RequestContext.name, requestContext);
-                next();
-            });
-        };
+        session.run(async () => {
+            session.set(RequestContext.name, requestContext);
+            next();
+        });
     }
 }

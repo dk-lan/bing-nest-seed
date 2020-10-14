@@ -9,11 +9,11 @@ export default class http{
         return 'http://' + _url;
     }
 
-    public static async get(_url: string, params: object = {}): Promise<any>{
+    public static async get(_url: string, params = {}): Promise<any>{
         return new Promise((resolve, reject) => {
             params['_'] = Math.random();
             let url = this.setUrl(_url)
-            url += `?${qs.stringify(params || {})}` 
+            url += `?${qs.stringify(params)}` 
             var httpOptions = {
                 url: url,
                 method: 'get',

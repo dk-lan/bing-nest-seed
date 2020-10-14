@@ -1,4 +1,4 @@
-import { NestInterceptor, Injectable, ExecutionContext } from "@nestjs/common";
+import { NestInterceptor, Injectable, ExecutionContext, CallHandler } from "@nestjs/common";
 import { Observable } from "rxjs";
 import { Result } from '@/bing';
 import { map } from 'rxjs/operators';
@@ -8,9 +8,11 @@ import { map } from 'rxjs/operators';
  */
 @Injectable()
 export class ResultWrapperInterceptor implements NestInterceptor {
-    intercept(context: ExecutionContext, call$: Observable<any>): Observable<any> {
-        return call$.pipe(map(value => {
+    intercept(context: ExecutionContext, next: CallHandler): Observable<any> {
+        return next
+        .handle()
+        .pipe(map(value => {
             return value as Result<any>;
-        }));
+        }))
     }
 }

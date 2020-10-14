@@ -1,5 +1,5 @@
 import * as bip39 from 'bip39';
-import * as hdkey from 'ethereumjs-wallet/hdkey';
+import { hdkey } from 'ethereumjs-wallet';
 import { Provider } from './provider';
 import { Prefix } from '@/bing/common/prefix';
 

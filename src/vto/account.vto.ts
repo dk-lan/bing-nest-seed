@@ -1,16 +1,16 @@
-import { ApiModelProperty } from '@nestjs/swagger';
+import { ApiProperty } from '@nestjs/swagger';
 
 export class AccountVTO{
 
-    @ApiModelProperty({description: "地址", required: false})
+    @ApiProperty({description: "地址", required: false})
     address: string
 
-    @ApiModelProperty({description: "私钥", required: false})
+    @ApiProperty({description: "私钥", required: false})
     privateKey: string
 
-    @ApiModelProperty({description: "助记词", required: false})
+    @ApiProperty({description: "助记词", required: false})
     mnemonic: string
 
-    @ApiModelProperty({description: "keystore", required: false})
+    @ApiProperty({description: "keystore", required: false})
     keystore: string
 }

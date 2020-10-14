@@ -1,5 +1,4 @@
-import { ApiModelProperty } from '@nestjs/swagger';
-import { lang } from 'moment';
+import { ApiProperty } from '@nestjs/swagger';
 
 /**
  * 标识
@@ -38,7 +37,7 @@ export class ViewModel implements IKey {
     /**
      * 标识
      */
-    @ApiModelProperty({ description: '标识' })
+    @ApiProperty({ description: '标识' })
     indexid: number;
 }
 
@@ -46,7 +45,7 @@ export class ViewModel implements IKey {
  * api 多语言参数
  */
 export class Lang {
-    @ApiModelProperty({description: "语言类型 en-us, zh-cn", required: false})
+    @ApiProperty({description: "语言类型 en-us, zh-cn", required: false})
     langType: string
 }
 
@@ -56,15 +55,15 @@ export class Lang {
  */
 export class QueryParameter extends Lang {
 
-    @ApiModelProperty({ description: '页索引', default: 1, required: true })
+    @ApiProperty({ description: '页索引', default: 1, required: true })
     page: number;
 
-    @ApiModelProperty({ description: '每页显示行数', default: 10, required: true })
+    @ApiProperty({ description: '每页显示行数', default: 10, required: true })
     pageLimit: number;
 
-    @ApiModelProperty({ description: '排序字段' , required: false})
+    @ApiProperty({ description: '排序字段' , required: false})
     orderword: string;
 
-    @ApiModelProperty({ description: '1 表示升序 0 表示降序' , required: false})
+    @ApiProperty({ description: '1 表示升序 0 表示降序' , required: false})
     order: number;
 }

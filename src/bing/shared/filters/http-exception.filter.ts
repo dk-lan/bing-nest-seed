@@ -41,7 +41,7 @@ export class HttpExcetpionFilter implements ExceptionFilter {
             .json({
                 code: util.helper.toInt(exception.getStatus()),
                 result: false,
-                message: exception.message.error,
+                message: exception.message,
                 data: null,
                 operationTime: util.moment().utc().format('YYYY-MM-DD hh:mm:ss.SSS'),
             });
