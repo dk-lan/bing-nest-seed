@@ -24,5 +24,8 @@ export { Roles } from './shared/decorator/roles.decorator'
 //config
 export { ServerConfig } from './config/server.config'
 
-export { HDWallet } from './blockchain/eth/hdwallet'
+//blockchain
+export { ETHAccount } from './blockchain/eth/accounts'
 export { Provider } from './blockchain/eth/provider'
+export { HDWallet } from './blockchain/hdwallet'
+export { EthersWallet } from './blockchain/eth/etherswallet'

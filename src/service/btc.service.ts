@@ -11,7 +11,7 @@ export class BTCService {
      * 创建账户，返回地址和私钥
      * @param dto 
      */
-    public async Create(): Promise<any>{
+    public async Create_PrivateKey(): Promise<any>{
         try{ 
             let ck          = CoinKey.createRandom(ci('NMC'));
             let key         = new CoinKey(ck.key);
@@ -19,7 +19,7 @@ export class BTCService {
             let pkey        = key.privateWif;
             return {
                 address: paddress,
-                privateKey: pkey
+                privatekey: pkey
             };
         } catch(error){
             return new Result<string>({
@@ -35,7 +35,7 @@ export class BTCService {
      */
     public async Import(dto: BTCImportDTO): Promise<any>{
         try{ 
-            let ck      = CoinKey.fromWif(dto.privateKey);
+            let ck      = CoinKey.fromWif(dto.privatekey);
             let address = ck.publicAddress;
             return {
                 address

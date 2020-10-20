@@ -22,7 +22,7 @@ export class BTCController extends ApiControllerBase{
     @ApiResponse({status: 200, type: AccountVTO})
     @Post('create/privatekey')
     public async Create(): Promise<any>{
-        return await this.service.Create();
+        return await this.service.Create_PrivateKey();
     }
 
     @UseInterceptors(ClassSerializerInterceptor)

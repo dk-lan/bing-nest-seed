@@ -3,7 +3,7 @@ import { hdkey } from 'ethereumjs-wallet';
 import { Provider } from './provider';
 import { Prefix } from '@/bing/common/prefix';
 
-export class HDWallet {
+export class ETHAccount {
     
     /**
      * web3 引擎
@@ -51,38 +51,4 @@ export class HDWallet {
             throw 'passowrd incorrect';
         }
     }    
-
-    /**
-     * 生成新的 HD 账户(带助记词)
-     */
-    public static async generateAccount(): Promise<any>{
-        let mnemonic    = bip39.generateMnemonic();
-        let seed        = await bip39.mnemonicToSeed(mnemonic);
-        let hdwallet    = hdkey.fromMasterSeed(seed);
-        let wallet      = hdwallet.derivePath("m/44'/60'/0'/0/0").getWallet();
-        let address     = Prefix.add_0x(wallet.getAddress().toString('hex'));
-        let privateKey  = wallet.getPrivateKey().toString('hex');
-        return {
-            address,
-            mnemonic,
-            privateKey
-        }
-    }    
-
-    /**
-     * 根据助记词获得账户信息
-     * @param mnemonic 助记词
-     */
-    public static async getAccountByMnemonic(mnemonic: string): Promise<any>{
-        let seed        = await bip39.mnemonicToSeed(mnemonic);
-        let hdwallet    = hdkey.fromMasterSeed(seed);
-        let wallet      = hdwallet.derivePath("m/44'/60'/0'/0/0").getWallet();
-        let address     = Prefix.add_0x(wallet.getAddress().toString('hex'));
-        let privateKey  = wallet.getPrivateKey().toString('hex');
-        return {
-            address,
-            mnemonic,
-            privateKey
-        }
-    }
 }

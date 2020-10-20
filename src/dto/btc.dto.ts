@@ -8,5 +8,5 @@ import { Lang, QueryParameter } from '@/bing';
 export class BTCImportDTO extends Lang{
     @IsNotEmpty()
     @ApiProperty({description: "私钥", required: true})
-    privateKey: string;
+    privatekey: string;
 }
